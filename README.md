@@ -1,4 +1,6 @@
 Recomp tools:
- -boundaries parser (generate them)
- -output all missing PPC Instructions from XenonRecomp log in list
- -generate PPC_FUNC for kernel
+Auto_Function_Parses.py - boundaries parser (generate them)
+ 
+ reader_parser.py - output all missing PPC Instructions from XenonRecomp log in list
+ 
+impget.cpp - generate PPC_FUNC for kernel
