@@ -34,7 +34,7 @@ switch_idx = 22
 # Initialize list to store erroneous switch statement addresses
 switch_addrs = []
 
-print("Parsing XenonRecomp log...")
+print("Parsing .html exported .xex by jump table (.toml)...")
 # Import each line of XenonRecomp log
 with open(xenonrecomp_log, 'r') as file:
     # Read each line in the file
