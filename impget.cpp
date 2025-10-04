@@ -13,7 +13,14 @@ void handle_imp_strings(const std::string& input_filename, const std::string& ou
         std::smatch match;
         std::string::const_iterator searchStart(line.cbegin());
         while (std::regex_search(searchStart, line.cend(), match, pattern)) {
-            outfile << "PPC_FUNC_THROW(" << match.str() << ");\n";
+            // Find the position of "("
+            std::string line2 = match.str();
+            size_t pos = line2.find('(');
+            std::cout << pos << std::endl;
+            if (pos != std::string::npos)
+                // Erase from position of "(" to end
+                line2.erase(pos);
+            outfile << "PPC_FUNC_THROW(" << line2 << ");\n";
             searchStart = match.suffix().first;
         }
     }
@@ -22,4 +29,4 @@ void handle_imp_strings(const std::string& input_filename, const std::string& ou
 int main() {
     handle_imp_strings("in.txt", "out.txt");
     return 0;
-} 
+}
